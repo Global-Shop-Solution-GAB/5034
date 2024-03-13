@@ -1,0 +1,88 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sPart.Declare(String)
+Variable.Global.sRev.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sSQL.Declare(String)
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'Inventory > open/new/delete, post save hook
+F.Intrinsic.Control.If(V.Caller.Hook,=,10185)
+	V.Global.sPart.Set(V.Passed.000007)
+	V.Global.sRev.Set(V.Passed.000008)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	'inventory > delete
+	F.Intrinsic.Control.If(V.Caller.Switches,=,"D")
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+			F.ODBC.con!rst.Delete
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Else
+		'inventory > open/new
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!PART(V.Global.sPart)
+			F.ODBC.con!rst.Update
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Inventory > copy
+F.Intrinsic.Control.If(V.Caller.Hook,=,13320)
+	'FROM part
+	V.Global.sPart.Set(V.Passed.000008)
+	V.Global.sRev.Set(V.Passed.000009)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sPart,"'",V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		F.ODBC.con!rst.AddNew
+		'TO part - copy over descriptions etc
+		V.Global.sPart.Set(V.Passed.000015)
+		V.Global.sRev.Set(V.Passed.000016)
+		F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+		F.ODBC.con!rst.Set!PART(V.Global.sPart)
+		F.ODBC.con!rst.Set!PURCHASE_DESC(V.ODBC.con!rst.FieldValTrim!PURCHASE_DESC)
+		F.ODBC.con!rst.Set!SALES_DESC(V.ODBC.con!rst.FieldValTrim!SALES_DESC)
+		F.ODBC.con!rst.Set!SPECIAL_NOTE(V.ODBC.con!rst.FieldValTrim!SPECIAL_NOTE)
+		F.ODBC.con!rst.Update
+	F.Intrinsic.Control.Else
+		'TO part
+		F.ODBC.con!rst.Close
+		V.Global.sPart.Set(V.Passed.000015)
+		V.Global.sRev.Set(V.Passed.000016)
+		F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!PART(V.Global.sPart)
+			F.ODBC.con!rst.Update
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_MAINT_ELNIK$}$ERIC$}$11/20/2012
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$'Quote 4120
+'Maintaints parts in the custom table
+Program.Sub.Comments.End
+
