@@ -1,0 +1,598 @@
+Program.Sub.ScreenSU.Start
+gui.SS_Form1..create
+gui.SS_Form1..caption("Purchase Description")
+gui.SS_Form1..size(3960,4770)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,Unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+gui.SS_Form1.lbl_txtPart.create(label,"Part Number",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txtPart0.create(textbox,"",True,3555,330,0,100,335,False,0,Arial,8,16777215,1)
+gui.SS_Form1.lbl_mltxtPnotes.create(label,"Purchase Description",True,1800,200,1,100,750,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.mltxtPnotes.create(textboxm)
+gui.SS_Form1.mltxtPnotes.text("")
+gui.SS_Form1.mltxtPnotes.visible(True)
+gui.SS_Form1.mltxtPnotes.size(3555,2745)
+gui.SS_Form1.mltxtPnotes.zorder(0)
+gui.SS_Form1.mltxtPnotes.position(100,950)
+gui.SS_Form1.mltxtPnotes.enabled(True)
+gui.SS_Form1.mltxtPnotes.alignment(0)
+gui.SS_Form1.mltxtPnotes.fontname("Arial")
+gui.SS_Form1.mltxtPnotes.fontsize(8)
+gui.SS_Form1.mltxtPnotes.BackColor(-2147483643)
+gui.SS_Form1.cmdSave.create(button)
+gui.SS_Form1.cmdSave.caption("Save")
+gui.SS_Form1.cmdSave.visible(True)
+gui.SS_Form1.cmdSave.size(1000,360)
+gui.SS_Form1.cmdSave.zorder(0)
+gui.SS_Form1.cmdSave.position(100,3780)
+gui.SS_Form1.cmdSave.enabled(True)
+gui.SS_Form1.cmdSave.fontname("Arial")
+gui.SS_Form1.cmdSave.fontsize(8)
+gui.SS_Form1.cmdSave.event(click,cmdsave_pur)
+
+
+gui.SS_Form2..create
+gui.SS_Form2..caption("Sales Description")
+gui.SS_Form2..size(3960,4785)
+gui.SS_Form2..position(0,0)
+gui.SS_Form2..event(unload,Unload)
+gui.SS_Form2..alwaysontop(False)
+gui.SS_Form2..fontname("Arial")
+gui.SS_Form2..fontsize(8)
+gui.SS_Form2..forecolor(0)
+gui.SS_Form2..fontstyle(,,,,)
+gui.SS_Form2..BackColor(-2147483633)
+gui.SS_Form2..controlbox(True)
+gui.SS_Form2..maxbutton(False)
+gui.SS_Form2..minbutton(False)
+gui.SS_Form2..mousepointer(0)
+gui.SS_Form2..moveable(True)
+gui.SS_Form2..sizeable(False)
+gui.SS_Form2..ShowInTaskBar(True)
+gui.SS_Form2..titlebar(True)
+gui.SS_Form2.lbl_txtpart.create(label,"Part Number",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form2.txtpart.create(textbox,"",True,3555,330,0,100,335,False,0,Arial,8,16777215,1)
+gui.SS_Form2.lbl_mltxtSdesc.create(label,"Sales Description",True,1800,200,1,100,750,True,0,Arial,8,-2147483633,0)
+gui.SS_Form2.mltxtSdesc.create(textboxm)
+gui.SS_Form2.mltxtSdesc.text("")
+gui.SS_Form2.mltxtSdesc.visible(True)
+gui.SS_Form2.mltxtSdesc.size(3555,2745)
+gui.SS_Form2.mltxtSdesc.zorder(0)
+gui.SS_Form2.mltxtSdesc.position(100,950)
+gui.SS_Form2.mltxtSdesc.enabled(True)
+gui.SS_Form2.mltxtSdesc.alignment(0)
+gui.SS_Form2.mltxtSdesc.fontname("Arial")
+gui.SS_Form2.mltxtSdesc.fontsize(8)
+gui.SS_Form2.mltxtSdesc.BackColor(-2147483643)
+gui.SS_Form2.cmdSave.create(button)
+gui.SS_Form2.cmdSave.caption("Save")
+gui.SS_Form2.cmdSave.visible(True)
+gui.SS_Form2.cmdSave.size(1000,360)
+gui.SS_Form2.cmdSave.zorder(0)
+gui.SS_Form2.cmdSave.position(100,3780)
+gui.SS_Form2.cmdSave.enabled(True)
+gui.SS_Form2.cmdSave.fontname("Arial")
+gui.SS_Form2.cmdSave.fontsize(8)
+gui.SS_Form2.cmdSave.event(click,cmdsave_sales)
+
+
+gui.SS_Form3..create
+gui.SS_Form3..caption("Special Notes")
+gui.SS_Form3..size(4005,4785)
+gui.SS_Form3..position(0,0)
+gui.SS_Form3..event(unload,Unload)
+gui.SS_Form3..alwaysontop(False)
+gui.SS_Form3..fontname("Arial")
+gui.SS_Form3..fontsize(8)
+gui.SS_Form3..forecolor(0)
+gui.SS_Form3..fontstyle(,,,,)
+gui.SS_Form3..BackColor(-2147483633)
+gui.SS_Form3..controlbox(True)
+gui.SS_Form3..maxbutton(False)
+gui.SS_Form3..minbutton(False)
+gui.SS_Form3..mousepointer(0)
+gui.SS_Form3..moveable(True)
+gui.SS_Form3..sizeable(False)
+gui.SS_Form3..ShowInTaskBar(True)
+gui.SS_Form3..titlebar(True)
+gui.SS_Form3.lbl_txtPart2.create(label,"Part Number",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form3.txtPart.create(textbox,"",True,3555,330,0,100,335,False,0,Arial,8,16777215,1)
+gui.SS_Form3.lbl_mltxtspecial.create(label,"Special Notes:",True,1800,200,1,100,750,True,0,Arial,8,-2147483633,0)
+gui.SS_Form3.mltxtspecial.create(textboxm)
+gui.SS_Form3.mltxtspecial.text("")
+gui.SS_Form3.mltxtspecial.visible(True)
+gui.SS_Form3.mltxtspecial.size(3555,2745)
+gui.SS_Form3.mltxtspecial.zorder(0)
+gui.SS_Form3.mltxtspecial.position(100,950)
+gui.SS_Form3.mltxtspecial.enabled(True)
+gui.SS_Form3.mltxtspecial.alignment(0)
+gui.SS_Form3.mltxtspecial.fontname("Arial")
+gui.SS_Form3.mltxtspecial.fontsize(8)
+gui.SS_Form3.mltxtspecial.BackColor(-2147483643)
+gui.SS_Form3.cmdSave.create(button)
+gui.SS_Form3.cmdSave.caption("Save")
+gui.SS_Form3.cmdSave.visible(True)
+gui.SS_Form3.cmdSave.size(1000,360)
+gui.SS_Form3.cmdSave.zorder(0)
+gui.SS_Form3.cmdSave.position(100,3780)
+gui.SS_Form3.cmdSave.enabled(True)
+gui.SS_Form3.cmdSave.fontname("Arial")
+gui.SS_Form3.cmdSave.fontsize(8)
+gui.SS_Form3.cmdSave.event(click,cmdsave_special)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sPart.Declare(String)
+Variable.Global.sRev.Declare(String)
+Variable.Global.sOldGSSpart.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.bPresence.Declare(Boolean,False)
+V.Local.sSQL.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.snewGSSpart.Declare(String)
+V.Local.sPurchase.Declare(String)
+V.Local.sSales.Declare(String)
+V.Local.sSpecial.Declare(String)
+V.Local.bCheck.Declare(Boolean,False)
+
+'InventoryHeaderPopulatehook
+'script 123: 10210,10220,10230
+'part # ID: 000007
+F.Intrinsic.Control.If(V.Caller.Hook,=,10120)
+	V.Passed.000068.Set("Purchase")
+	V.Passed.000069.Set("Sales")
+	V.Passed.000070.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'SO > Lines Populate hook
+'script 123: 12410,12420,12430
+'part # ID: 000052
+F.Intrinsic.Control.If(V.Caller.Hook,=,12010)
+	V.Passed.000162.Set("Purchase")
+	V.Passed.000141.Set("Sales")
+	V.Passed.000210.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'PO > Lines Populate hook
+'script 123: 17160,17170,17180
+'part # ID: 000008
+F.Intrinsic.Control.If(V.Caller.Hook,=,17050)
+	V.Passed.000097.Set("Purchase")
+	V.Passed.000101.Set("Sales")
+	V.Passed.000102.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'Quote > Lines Populate hook
+'script 123: 10670,10680,10690
+'part # ID: 000052
+F.Intrinsic.Control.If(V.Caller.Hook,=,10260)
+	V.Passed.000201.Set("Purchase")
+	V.Passed.000202.Set("Sales")
+	V.Passed.000203.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'Purchase > Purchase Req >open/new
+F.Intrinsic.Control.If(V.Caller.Hook,=,16190)
+	V.Passed.000153.set("Purchase")
+	V.Passed.000154.Set("Sales")
+	V.Passed.000155.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'BOM > File > BOM > Open/New populate hook
+'16360,16370,16380
+F.Intrinsic.Control.If(V.Caller.Hook,=,16300)
+	V.Passed.000214.Set("Purchase")
+	V.Passed.000215.Set("Sales")
+	V.Passed.000216.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'Inventory > Supply and Demand
+'14070,14080,14090
+F.Intrinsic.Control.If(V.Caller.Hook,=,14045)
+	V.Passed.000252.set("Purchase")
+	V.Passed.000190.Set("Sales")
+	V.Passed.000253.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'Purchase > Vendor Quotes >open/new
+'12986,12987,12988
+F.Intrinsic.Control.If(V.Caller.Hook,=,12985)
+	V.Passed.000005.set("Purchase")
+	V.Passed.000006.Set("Sales")
+	V.Passed.000007.Set("Notes")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'Inventory > open/new/delete, post save hook
+F.Intrinsic.Control.If(V.Caller.Hook,=,10185)
+	V.Global.sPart.Set(V.Passed.000007)
+	V.Global.sRev.Set(V.Passed.000008)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	'inventory > delete
+	F.Intrinsic.Control.If(V.Caller.Switches,=,"D")
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+			F.ODBC.con!rst.Delete
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Else
+		'inventory > open/new
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!PART(V.Global.sPart)
+			F.ODBC.con!rst.Update
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndIf
+
+'Inventory > copy
+F.Intrinsic.Control.If(V.Caller.Hook,=,13320)
+	'FROM part
+	V.Global.sPart.Set(V.Passed.000008)
+	V.Global.sRev.Set(V.Passed.000009)
+	'TO part - copy over descriptions etc
+	V.Local.sPart.Set(V.Passed.000015)
+	V.Local.sRev.Set(V.Passed.000016)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sOldGSSPart)
+	F.Intrinsic.String.GSSPartString(V.Local.sPart,V.Local.sRev,V.Local.sNewGSSPart)
+	F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Global.sOldGSSPart,"'",V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+		V.Local.sPurchase.Set(V.ODBC.con!rst.FieldValTrim!PURCHASE_DESC)
+		V.Local.sSales.Set(V.ODBC.con!rst.FieldValTrim!SALES_DESC)
+		V.Local.sSpecial.Set(V.ODBC.con!rst.FieldValTrim!SPECIAL_NOTE)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rst.Close
+	'if TO and FROM parts are not the same, customer is copying a new part and do not transfer notes from old part to new part.
+	F.Intrinsic.Control.If(V.Local.sPart,<>,V.Global.sPart)
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Local.sNewGSSPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!PART(V.Local.sNewGSSPart)
+			F.ODBC.con!rst.Update
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		'if the TO and FROM part are the same, the customer is rev up one level, save notes from old part to new part. Add a check to make sure the customer did not try to copy new part without saving.
+		F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES Where PART = '",V.Local.sNewGSSPart,"'",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!PART(V.Local.sNewGSSPart)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Set!PURCHASE_DESC(V.Local.sPurchase)
+		F.ODBC.con!rst.Set!SALES_DESC(V.Local.sSales)
+		F.ODBC.con!rst.Set!SPECIAL_NOTE(V.Local.sSpecial)
+		F.ODBC.con!rst.Update
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rst.Close
+	F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndIf
+
+'Script 1 buttons - Purchase
+F.Intrinsic.Control.If(V.Caller.Hook,=,10210)
+	V.Global.sPart.Set(V.Passed.000007)
+	V.Global.sRev.Set(V.Passed.000008)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,12410)
+	V.Global.sPart.Set(V.Passed.000052)
+	V.Global.sRev.Set(V.Passed.000053)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,17160)
+	V.Global.sPart.Set(V.Passed.000008)
+	V.Global.sRev.Set(V.Passed.000009)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,10670)
+	V.Global.sPart.Set(V.Passed.000052)
+	V.Global.sRev.Set(V.Passed.000053)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,16250)
+	V.Global.sPart.Set(V.Passed.000013)
+	V.Global.sRev.Set(V.Passed.000014)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,16360)
+	V.Global.sPart.Set(V.Passed.000001)
+	V.Global.sRev.Set(V.Passed.000093)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,14070)
+	V.Global.sPart.Set(V.Passed.000003)
+	V.Global.sRev.Set(V.Passed.000099)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,12986)
+	V.Global.sPart.Set(V.Passed.000019)
+	V.Global.sRev.Set(V.Passed.000020)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Purchase)
+'script 2 buttons - Sales
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,10220)
+	V.Global.sPart.Set(V.Passed.000007)
+	V.Global.sRev.Set(V.Passed.000008)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,12420)
+	V.Global.sPart.Set(V.Passed.000052)
+	V.Global.sRev.Set(V.Passed.000053)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,17170)
+	V.Global.sPart.Set(V.Passed.000008)
+	V.Global.sRev.Set(V.Passed.000009)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,10680)
+	V.Global.sPart.Set(V.Passed.000052)
+	V.Global.sRev.Set(V.Passed.000053)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,16260)
+	V.Global.sPart.Set(V.Passed.000013)
+	V.Global.sRev.Set(V.Passed.000014)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,16370)
+	V.Global.sPart.Set(V.Passed.000001)
+	V.Global.sRev.Set(V.Passed.000093)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,14080)
+	V.Global.sPart.Set(V.Passed.000003)
+	V.Global.sRev.Set(V.Passed.000099)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,12987)
+	V.Global.sPart.Set(V.Passed.000019)
+	V.Global.sRev.Set(V.Passed.000020)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Sales)
+'script 3 buttons - Special notes
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,10230)
+	V.Global.sPart.Set(V.Passed.000007)
+	V.Global.sRev.Set(V.Passed.000008)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,12430)
+	V.Global.sPart.Set(V.Passed.000052)
+	V.Global.sRev.Set(V.Passed.000053)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,17180)
+	V.Global.sPart.Set(V.Passed.000008)
+	V.Global.sRev.Set(V.Passed.000009)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,10690)
+	V.Global.sPart.Set(V.Passed.000052)
+	V.Global.sRev.Set(V.Passed.000053)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,16270)
+	V.Global.sPart.Set(V.Passed.000013)
+	V.Global.sRev.Set(V.Passed.000014)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,16380)
+	V.Global.sPart.Set(V.Passed.000001)
+	V.Global.sRev.Set(V.Passed.000093)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,14090)
+	V.Global.sPart.Set(V.Passed.000003)
+	V.Global.sRev.Set(V.Passed.000099)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,12988)
+	V.Global.sPart.Set(V.Passed.000019)
+	V.Global.sRev.Set(V.Passed.000020)
+	F.Intrinsic.String.GSSPartString(V.Global.sPart,V.Global.sRev,V.Global.sPart)
+	F.Intrinsic.Control.CallSub(Special)
+F.Intrinsic.Control.Else
+'	'Upload Excel - stand alone menu item
+'	F.Automation.MSExcel.CheckPresence(V.Local.bPresence)
+'	F.Intrinsic.Control.If(V.Local.bPresence,=,False)
+'		F.Intrinsic.UI.Msgbox("Microsoft Excel not found on this machine. Please install Microsoft Excel.","GAB Error")
+'		F.Intrinsic.Control.CallSub(Unload)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.CallSub(Fileopen)
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Control.CallSub(Unload)
+
+Program.Sub.Main.End
+
+Program.Sub.FileOpen.Start
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.sRow.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sPart.Declare(String)
+
+
+
+F.Intrinsic.UI.ShowOpenFileDialog("","*.xlsx",,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.InvokeWaitDialog("Saving...","Please Wait...")
+F.Automation.MSExcel.CreateAppObject("MSExcel")
+F.Automation.MSExcel.OpenWorkbook("MSExcel","Workbook",V.Local.sRet)
+F.Automation.MSExcel.OpenWorksheet("Workbook","Worksheet",1)
+F.Automation.MSExcel.RowCount("Worksheet",V.Local.iRow)
+F.Automation.MSExcel.ReadSpreadsheet(V.Local.sRet,5,V.Local.iRow,V.Local.sFile)
+F.Automation.MSExcel.DestroyAllObjects("MSExcel","Workbook","Worksheet")
+F.Intrinsic.String.Split(V.Local.sFile,"$!$",V.Local.sRow)
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.sRow.UBound,1)
+	F.Intrinsic.UI.ChangeWaitStatus("Loading...",V.Local.i,V.Local.sRow.LBound,V.Local.sRow.UBound)
+	F.Intrinsic.String.Split(V.Local.sRow(v.Local.i),"*!*",V.Local.sCol)
+	F.Intrinsic.Control.If(V.Local.sCol(0).Trim,<>,"")
+		F.Intrinsic.String.GSSPartString(V.Local.sCol(0).Trim,"",V.Local.sPart)
+		F.Intrinsic.String.Concat("Select * From INVENTORY_MSTR Where PART = '",V.Local.sPart,"' and LOCATION = ''",V.Local.sSQL)
+		F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+			F.Intrinsic.String.Concat("Select * From GCG_5034_ADDL_NOTES where PART = '",V.Local.sPart,"'",V.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,True)
+				F.ODBC.con!rstNotes.AddNew
+				F.ODBC.con!rstNotes.Set!PART(V.Local.sPart)
+				F.ODBC.con!rstNotes.Set!SALES_DESC(V.Local.sCol(2).Trim)
+				F.ODBC.con!rstNotes.Set!PURCHASE_DESC(V.Local.sCol(3).Trim)
+				F.ODBC.con!rstNotes.Set!SPECIAL_NOTE(V.Local.sCol(4).Trim)
+				F.ODBC.con!rstNotes.Update
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstNotes.Close
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Control.CallSub(Unload)
+
+
+Program.Sub.FileOpen.End
+
+Program.Sub.Unload.Start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.Purchase.Start
+V.Local.sSQL.Declare(String)
+'V.Global.sPart.Set("123")
+
+Gui.SS_Form1.txtPart0.Text(V.Global.sPart)
+F.Intrinsic.String.Concat("SELECT * from GCG_5034_ADDL_NOTES where Part = '",V.Global.sPart,"'",V.Local.sSQL)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	Gui.SS_Form1.mltxtPnotes.Text(V.ODBC.con!rst.FieldValTrim!PURCHASE_DESC)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Close
+Gui.SS_Form1..Show
+
+Program.Sub.Purchase.End
+
+Program.Sub.Sales.Start
+V.Local.sSQL.Declare(String)
+'V.Global.sPart.Set("123")
+
+Gui.SS_Form2.txtPart.Text(V.Global.sPart)
+F.Intrinsic.String.Concat("SELECT * from GCG_5034_ADDL_NOTES where Part = '",V.Global.sPart,"'",V.Local.sSQL)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	Gui.SS_Form2.mltxtSdesc.Text(V.ODBC.con!rst.FieldValTrim!SALES_DESC)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Close
+Gui.SS_Form2..Show
+
+Program.Sub.Sales.End
+
+Program.Sub.Special.Start
+V.Local.sSQL.Declare(String)
+'V.Global.sPart.Set("123")
+
+Gui.SS_Form3.txtPart.Text(V.Global.sPart)
+F.Intrinsic.String.Concat("SELECT * from GCG_5034_ADDL_NOTES where Part = '",V.Global.sPart,"'",V.Local.sSQL)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	Gui.SS_Form3.mltxtspecial.Text(V.ODBC.con!rst.FieldValTrim!SPECIAL_NOTE)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Close
+Gui.SS_Form3..Show
+
+Program.Sub.Special.End
+
+program.sub.cmdsave_pur.start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT * from GCG_5034_ADDL_NOTES where Part = '",V.Global.sPart,"'",V.Local.sSQL)
+F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	F.ODBC.con!rst.Set!PURCHASE_DESC(V.Screen.SS_Form1!mltxtPnotes.Text)
+F.Intrinsic.Control.Else
+	F.ODBC.con!rst.AddNew
+	F.ODBC.con!rst.Set!PART(V.Global.sPart)
+	F.ODBC.con!rst.Set!PURCHASE_DESC(V.Screen.SS_Form1!mltxtPnotes.Text)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Update
+F.ODBC.con!rst.Close
+
+program.sub.cmdsave_pur.end
+
+program.sub.cmdsave_sales.start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT * from GCG_5034_ADDL_NOTES where Part = '",V.Global.sPart,"'",V.Local.sSQL)
+F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	F.ODBC.con!rst.Set!SALES_DESC(V.Screen.SS_Form2!mltxtSdesc.Text)
+F.Intrinsic.Control.Else
+	F.ODBC.con!rst.AddNew
+	F.ODBC.con!rst.Set!PART(V.Global.sPart)
+	F.ODBC.con!rst.Set!SALES_DESC(V.Screen.SS_Form2!mltxtSdesc.Text)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Update
+F.ODBC.con!rst.Close
+
+program.sub.cmdsave_sales.end
+
+program.sub.cmdsave_special.start
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT * from GCG_5034_ADDL_NOTES where Part = '",V.Global.sPart,"'",V.Local.sSQL)
+F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,False)
+	F.ODBC.con!rst.Set!SPECIAL_NOTE(V.Screen.SS_Form3!mltxtspecial.Text)
+F.Intrinsic.Control.Else
+	F.ODBC.con!rst.AddNew
+	F.ODBC.con!rst.Set!PART(V.Global.sPart)
+	F.ODBC.con!rst.Set!SPECIAL_NOTE(V.Screen.SS_Form3!mltxtspecial.Text)
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rst.Update
+F.ODBC.con!rst.Close
+
+
+program.sub.cmdsave_special.end
+
+
